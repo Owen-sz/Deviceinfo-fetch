@@ -1,5 +1,4 @@
 #!/bin/bash
-# This script uses both Bash and awk
 
 if [ -f ~/bin/deviceinfo ]; then
     # OS
