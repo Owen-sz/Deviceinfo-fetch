@@ -1,5 +1,5 @@
 # Deviceinfo-fetch
-Fetch script to grab device hardware and OS information
+Linux fetch script to grab device hardware and OS information
 
 ### How to use
 
