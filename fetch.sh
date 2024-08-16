@@ -43,12 +43,12 @@ if [ -f ~/bin/deviceinfo ]; then
     root_fs_type=$(findmnt -n -o FSTYPE /)
     disk=$(df / | awk 'NR==2 {print $1}' | sed 's/[0-9]*$//')
     total_storage=$(lsblk -dn -o SIZE $disk)
-    available_space=$(df -h / | awk 'NR==2 {gsub("G", "GB", $4); print $4}')
+    available_storage=$(df -h / | awk 'NR==2 {gsub("G", "GB", $4); print $4}')
     type=$(lsblk -o TRAN | awk 'NR>1 {print $1}' | sort -u | paste -sd " ")
 
     echo -e "   ${BOLD}File System:${RESET}" "$root_fs_type"
     echo -e "   ${BOLD}Total Usable Storage:${RESET}" "$total_storage"
-    echo -e "   ${BOLD}Available Space::${RESET}" "$available_space"
+    echo -e "   ${BOLD}Available Storage:${RESET}" "$available_storage"
     echo -e "   ${BOLD}Type:${RESET}" "$type"
 fi
 
