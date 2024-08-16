@@ -33,10 +33,10 @@ if [ -f ~/bin/deviceinfo ]; then
     echo -e "   ${BOLD}Available Memory:${RESET}" "$memavailable"
 
     swaptotal=$(cat /proc/meminfo | grep -i swaptotal | awk '{print $2/1024/1024 " GB"}')
-    echo -e "   ${BOLD}Available Swap:${RESET}" "$swaptotal"
+    echo -e "   ${BOLD}Total Swap:${RESET}" "$swaptotal"
 
     swapfree=$(cat /proc/meminfo | grep -i swapfree | awk '{print $2/1024/1024 " GB"}')
-    echo -e "   ${BOLD}Swap Available:${RESET}" "$swapfree"
+    echo -e "   ${BOLD}Available Swap:${RESET}" "$swapfree"
 
     # disk
     echo -e "${BOLD}Disk Info:${RESET}"
