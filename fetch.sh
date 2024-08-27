@@ -7,7 +7,7 @@ if [ -f ~/bin/deviceinfo ]; then
 
     # Computer model (host)
     hostname=$(hostname) 
-    echo -e "${BOLD}Hostname:${RESET}" $hostname
+    echo -e "${BOLD}Hostname:${RESET}" "$hostname"
 
     # OS
     source /etc/os-release
@@ -42,7 +42,7 @@ if [ -f ~/bin/deviceinfo ]; then
     echo -e "${BOLD}Disk Info:${RESET}"
     root_fs_type=$(findmnt -n -o FSTYPE /)
     disk=$(df / | awk 'NR==2 {print $1}' | sed 's/[0-9]*$//')
-    total_storage=$(lsblk -dn -o SIZE $disk)
+    total_storage=$(lsblk -dn -o SIZE "$disk")
     available_storage=$(df -h / | awk 'NR==2 {gsub("G", "GB", $4); print $4}')
     type=$(lsblk -o TRAN | awk 'NR>1 {print $1}' | sort -u | paste -sd " ")
 
