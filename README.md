@@ -12,4 +12,4 @@ cd into the folder:
 Install the program:
 `bash fetch.sh`
 
-Now, simply run `deviceinfo` from any directory. 
+Now, simply run `deviceinfo`.
